@@ -1,0 +1,37 @@
+//
+//  ViewController.h
+//  Translate
+//
+//  Created by Kira on 11/25/13.
+//  Copyright (c) 2013 Kira. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate>
+{
+    NSMutableData *soundData;
+    NSMutableData *mutiData;
+    NSArray *supportLanguage;
+    NSMutableArray *favTextArray;
+}
+
+- (IBAction)btnTranslateTap:(id)sender;
+- (IBAction)srcContryTap:(id)sender;
+- (IBAction)desContryTap:(id)sender;
+- (IBAction)btnPickerDone:(id)sender;
+- (IBAction)btnPlaySoundTap:(id)sender;
+- (IBAction)btnSwapTap:(id)sender;
+- (IBAction)btnFavTap:(id)sender;
+- (IBAction)btnFavShowTap:(id)sender;
+
+@property (nonatomic, retain) IBOutlet UITextView *srcTextView;
+@property (nonatomic, retain) IBOutlet UIButton *btnSrc;
+@property (nonatomic, retain) IBOutlet UIButton *btnDes;
+@property (nonatomic, retain) IBOutlet UIButton *btnTranslate;
+@property (nonatomic, retain) IBOutlet UIView *pickerView;
+@property (nonatomic, retain) IBOutlet UIPickerView *picker;
+@property (nonatomic, retain) IBOutlet UITextView *resultTextView;
+@property (nonatomic, copy) NSString *rawResultString;
+
+@end

@@ -1,0 +1,73 @@
+/* 
+  Localizable.strings
+  Translate
+
+  Created by Kira on 11/26/13.
+  Copyright (c) 2013 Kira. All rights reserved.
+*/
+
+"Afrikaans" = "南非荷蘭語";
+"Albanian" = "阿爾巴尼亞語";
+"Arabic" = "阿拉伯語";
+"Azerbaijani" = "阿塞拜疆語";
+"Basque" = "巴斯克語";
+"Bengali" = "孟加拉語";
+"Belarusian" = "白俄羅斯語";
+"Bulgarian" = "保加利亞語";
+"Catalan" = "加泰羅尼亞語";
+"Chinese Simplified" = "中國簡體";
+"Chinese Traditional" = "中國繁體";
+"Croatian" = "克羅地亞語";
+"Czech" = "捷克語";
+"Danish" = "丹麥語";
+"Dutch" = "荷蘭語";
+"English" = "英語";
+"Esperanto" = "世界語";
+"Estonian" = "愛沙尼亞語";
+"Filipino" = "菲律賓語";
+"Finnish" = "芬蘭語";
+"French" = "法語";
+"Galician" = "加利西亞語";
+"Georgian" = "格魯吉亞語";
+"German" = "德語";
+"Greek" = "希臘語";
+"Gujarati" = "古吉拉特語";
+"Haitian Creole" = "海地克里奧爾語";
+"Hebrew" = "希伯來語";
+"Hindi" = "印地語";
+"Hungarian" = "匈牙利語";
+"Icelandic" = "冰島語";
+"Indonesian" = "印尼語";
+"Irish" = "愛爾蘭語";
+"Italian" = "意大利語";
+"Japanese" = "日語";
+"Kannada" = "卡納達語";
+"Korean" = "韓語";
+"Latin" = "拉丁語";
+"Latvian" = "拉脫維亞語";
+"Lithuanian" = "立陶宛語";
+"Macedonian" = "馬其頓語";
+"Malay" = "馬來語語";
+"Maltese" = "馬耳他語";
+"Norwegian" = "挪威語";
+"Persian" = "波斯語";
+"Polish" = "波蘭語";
+"Portuguese" = "葡萄牙語";
+"Romanian" = "羅馬尼亞語";
+"Russian" = "俄羅斯語";
+"Serbian" = "塞爾維亞語";
+"Slovak" = "斯洛伐克語";
+"Slovenian" = "斯洛文尼亞語";
+"Spanish" = "西班牙語";
+"Swahili" = "斯瓦希里語語";
+"Swedish" = "瑞典語";
+"Tamil" = "泰米爾語";
+"Telugu" = "泰盧固語";
+"Thai" = "泰語";
+"Turkish" = "土耳其語";
+"Ukrainian" = "烏克蘭語";
+"Urdu" = "烏爾都語";
+"Vietnamese" = "越南語";
+"Welsh" = "威爾士語";
+"Yiddish" = "意第緒語";
+"Automatic" = "自動";

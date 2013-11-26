@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  Translate
+
+  Created by Kira on 11/26/13.
+  Copyright (c) 2013 Kira. All rights reserved.
+*/
+
+
+"Afrikaans" = "Afrikaans";
+"Albanian" = "Albanian" ;
+"Arabic" = "Arabic";
+"Azerbaijani" = "Azerbaijani" ;
+"Basque" = "Basque" ;
+"Bengali" = "Bengali" ;
+"Belarusian" = "Belarusian" ;
+"Bulgarian" = "Bulgarian" ;
+"Catalan" = "Catalan" ;
+"Chinese Simplified" = "Chinese Simplified" ;
+"Chinese Traditional" = "Chinese Traditional" ;
+"Croatian" = "Croatian" ;
+"Czech" = "Czech" ;
+"Danish" = "Danish" ;
+"Dutch" = "Dutch" ;
+"English" = "English" ;
+"Esperanto" = " Esperanto" ;
+"Estonian" = "Estonian" ;
+"Filipino" = "Filipino" ;
+"Finnish" = "Finnish" ;
+"French" = "French" ;
+"Galician" = "Galician" ;
+"Georgian" = "Georgian" ;
+"German" = "German" ;
+"Greek" = " reek" ;
+"Gujarati" = "Gujarati" ;
+"Haitian Creole" = "Haitian Creole" ;
+"Hebrew" = "Hebrew" ;
+"Hindi" = "Hindi" ;
+"Hungarian" = "Hungarian" ;
+"Icelandic" = "Icelandic" ;
+"Indonesian" = " Indonesian" ;
+"Irish" = "Irish" ;
+"Italian" = "Italian" ;
+"Japanese" = "Japanese" ;
+"Kannada" = "Kannada" ;
+"Korean" = "Korean" ;
+"Latin" = "Latin" ;
+"Latvian" = "Latvian" ;
+"Lithuanian" = "Lithuanian" ;
+"Macedonian" = "Macedonian" ;
+"Malay" = "Malay" ;
+"Maltese" = "Maltese" ;
+"Norwegian" = "Norwegian" ;
+"Persian" = "Persian" ;
+"Polish" = "Polish" ;
+"Portuguese" = "Portuguese" ;
+"Romanian" = "Romanian" ;
+"Russian" = "Russian" ;
+"Serbian" = "Serbian" ;
+"Slovak" = "Slovak";
+"Slovenian" = "Slovenian" ;
+"Spanish" = "Spanish" ;
+"Swahili" = "Swahili" ;
+"Swedish" = "Swedish" ;
+"Tamil" = "Tamil";
+"Telugu" = "Telugu";
+"Thai" = "Thai";
+"Turkish" = "Turkish";
+"Ukrainian" = "Ukrainian";
+"Urdu" = "Urdu";
+"Vietnamese" = "Vietnamese";
+"Welsh" = "Welsh";
+"Yiddish" = "Yiddish";
+"Automatic" = "Automatic";
