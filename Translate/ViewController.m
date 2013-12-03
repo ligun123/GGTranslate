@@ -103,9 +103,9 @@ NSString *UUIDCreate()
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"noiad"]) {
         [_btnBuy removeFromSuperview];
         self.btnBuy = nil;
-        self.btnSound.frame = CGRectOffset(self.btnSound.frame, -100, 0);
+        self.btnSound.frame = CGRectOffset(self.btnSound.frame, -70, 0);
         self.btnFav.frame = CGRectOffset(self.btnFav.frame, -50, 0);
-        self.btnFavList.frame = CGRectOffset(self.btnFavList.frame, -50, 0);
+        self.btnFavList.frame = CGRectOffset(self.btnFavList.frame, -20, 0);
     } else {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noiadFinish:) name:@"noiad" object:nil];
     }
@@ -119,6 +119,9 @@ NSString *UUIDCreate()
     admobView = nil;
     [_btnBuy removeFromSuperview];
     self.btnBuy = nil;
+    self.btnSound.frame = CGRectOffset(self.btnSound.frame, -70, 0);
+    self.btnFav.frame = CGRectOffset(self.btnFav.frame, -50, 0);
+    self.btnFavList.frame = CGRectOffset(self.btnFavList.frame, -20, 0);
 }
 
 - (void)viewDidLayoutSubviews
@@ -133,24 +136,26 @@ NSString *UUIDCreate()
     bk.frame = self.view.bounds;
     [self.view insertSubview:[bk autorelease] atIndex:0];
     
-    
-    admobView = [[GADBannerView alloc]
-                 initWithFrame:CGRectMake(0.0,
-                                          self.view.frame.size.height -
-                                          GAD_SIZE_320x50.height,
-                                          GAD_SIZE_320x50.width,
-                                          GAD_SIZE_320x50.height)];
-    // 指定广告的“单元标识符”，也就是您的 AdMob 发布商 ID。
-    admobView.adUnitID = MY_BANNER_UNIT_ID;
-    
-    // 告知运行时文件，在将用户转至广告的展示位置之后恢复哪个 UIViewController
-    // 并将其添加至视图层级结构。
-    admobView.rootViewController = self;
-    [self.view addSubview:admobView];
-    
-    // 启动一般性请求并在其中加载广告。
-    [admobView loadRequest:[GADRequest request]];
-    admobView.delegate = self;
+    return ;
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"noiad"]) {
+        admobView = [[GADBannerView alloc]
+                     initWithFrame:CGRectMake(0.0,
+                                              self.view.frame.size.height -
+                                              GAD_SIZE_320x50.height,
+                                              GAD_SIZE_320x50.width,
+                                              GAD_SIZE_320x50.height)];
+        // 指定广告的“单元标识符”，也就是您的 AdMob 发布商 ID。
+        admobView.adUnitID = MY_BANNER_UNIT_ID;
+        
+        // 告知运行时文件，在将用户转至广告的展示位置之后恢复哪个 UIViewController
+        // 并将其添加至视图层级结构。
+        admobView.rootViewController = self;
+        [self.view addSubview:admobView];
+        
+        // 启动一般性请求并在其中加载广告。
+        [admobView loadRequest:[GADRequest request]];
+        admobView.delegate = self;
+    }
 }
 
 - (void)dealloc
@@ -244,7 +249,7 @@ NSString *UUIDCreate()
 }
 
 - (IBAction)btnFavTap:(id)sender {
-    if ([[_srcTextView text] length] == 0 || [[_resultTextView text] length] == 0) {
+    if ([[_srcTextView text] length] == 0 || [[_resultTextView text] length] == 0 || soundData == nil) {
         [BWStatusBarOverlay showSuccessWithMessage:NSLocalizedString(@"Content Error", nil) duration:2.0 animated:YES];
         return ;
     }
