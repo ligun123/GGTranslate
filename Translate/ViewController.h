@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GADBannerView.h"
 
-@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate>
+@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate, GADBannerViewDelegate>
 {
     NSMutableData *soundData;
     NSMutableData *mutiData;
     NSArray *supportLanguage;
     NSMutableArray *favTextArray;
+    GADBannerView *admobView;
 }
 
 - (IBAction)btnTranslateTap:(id)sender;
@@ -29,9 +31,14 @@
 @property (nonatomic, retain) IBOutlet UIButton *btnSrc;
 @property (nonatomic, retain) IBOutlet UIButton *btnDes;
 @property (nonatomic, retain) IBOutlet UIButton *btnTranslate;
+@property (nonatomic, retain) IBOutlet UIButton *btnBuy;
 @property (nonatomic, retain) IBOutlet UIView *pickerView;
 @property (nonatomic, retain) IBOutlet UIPickerView *picker;
 @property (nonatomic, retain) IBOutlet UITextView *resultTextView;
 @property (nonatomic, copy) NSString *rawResultString;
+
+@property (nonatomic, retain) IBOutlet UIButton *btnSound;
+@property (nonatomic, retain) IBOutlet UIButton *btnFav;
+@property (nonatomic, retain) IBOutlet UIButton *btnFavList;
 
 @end

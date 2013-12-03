@@ -102,7 +102,7 @@
 					<object class="IBUITextView" id="238250246">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{10, 20}, {300, 120}}</string>
+						<string key="NSFrame">{{10, 24}, {300, 120}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="168314415"/>
@@ -192,7 +192,7 @@
 					<object class="IBUIButton" id="168314415">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 148}, {92, 44}}</string>
+						<string key="NSFrame">{{9, 148}, {92, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="321698162"/>
@@ -220,7 +220,7 @@
 					<object class="IBUIButton" id="847153327">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{155, 148}, {92, 44}}</string>
+						<string key="NSFrame">{{157, 148}, {92, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="613966871"/>
@@ -350,7 +350,7 @@
 					<object class="IBUILabel" id="25611007">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, -2}, {300, 21}}</string>
+						<string key="NSFrame">{{10, 0}, {300, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="238250246"/>
@@ -405,7 +405,7 @@
 						<reference key="IBUIFont" ref="302009078"/>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
+				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="25611007"/>
@@ -413,6 +413,7 @@
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MC4yMTgyNzg3MTcxIDAuNjU4NTc4NzkxNiAwLjk0MjcwMTY5MDEAA</bytes>
 				</object>
+				<bool key="IBUIAutoresizesSubviews">NO</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
@@ -424,13 +425,13 @@
 							<integer value="3"/>
 						</array>
 						<array key="dict.values">
-							<string>{320, 568}</string>
-							<string>{568, 320}</string>
+							<string>{320, 480}</string>
+							<string>{480, 320}</string>
 						</array>
 					</object>
 					<string key="IBUITargetRuntime">IBCocoaTouchFramework</string>
-					<string key="IBUIDisplayName">Retina 4 Full Screen</string>
-					<int key="IBUIType">2</int>
+					<string key="IBUIDisplayName">Retina 3.5 Full Screen</string>
+					<int key="IBUIType">0</int>
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -500,6 +501,38 @@
 						<reference key="destination" ref="301055381"/>
 					</object>
 					<int key="connectionID">38</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">btnBuy</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="921223217"/>
+					</object>
+					<int key="connectionID">47</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">btnSound</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="489861852"/>
+					</object>
+					<int key="connectionID">48</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">btnFav</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1017921717"/>
+					</object>
+					<int key="connectionID">49</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">btnFavList</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1001380736"/>
+					</object>
+					<int key="connectionID">50</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -596,6 +629,15 @@
 					</object>
 					<int key="connectionID">34</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">btnBuyTap:</string>
+						<reference key="source" ref="921223217"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">46</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -624,13 +666,13 @@
 							<reference ref="301055381"/>
 							<reference ref="321698162"/>
 							<reference ref="613966871"/>
-							<reference ref="847153327"/>
 							<reference ref="489861852"/>
 							<reference ref="1017921717"/>
 							<reference ref="168314415"/>
 							<reference ref="1001380736"/>
 							<reference ref="25611007"/>
 							<reference ref="921223217"/>
+							<reference ref="847153327"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -751,7 +793,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">45</int>
+			<int key="maxID">50</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -759,6 +801,7 @@
 					<string key="className">ViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="btnBuyTap:">id</string>
 						<string key="btnFavShowTap:">id</string>
 						<string key="btnFavTap:">id</string>
 						<string key="btnPickerDone:">id</string>
@@ -769,6 +812,10 @@
 						<string key="srcContryTap:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="btnBuyTap:">
+							<string key="name">btnBuyTap:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="btnFavShowTap:">
 							<string key="name">btnFavShowTap:</string>
 							<string key="candidateClassName">id</string>
@@ -803,7 +850,11 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="btnBuy">UIButton</string>
 						<string key="btnDes">UIButton</string>
+						<string key="btnFav">UIButton</string>
+						<string key="btnFavList">UIButton</string>
+						<string key="btnSound">UIButton</string>
 						<string key="btnSrc">UIButton</string>
 						<string key="btnTranslate">UIButton</string>
 						<string key="picker">UIPickerView</string>
@@ -812,8 +863,24 @@
 						<string key="srcTextView">UITextView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="btnBuy">
+							<string key="name">btnBuy</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="btnDes">
 							<string key="name">btnDes</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnFav">
+							<string key="name">btnFav</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnFavList">
+							<string key="name">btnFavList</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnSound">
+							<string key="name">btnSound</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="btnSrc">

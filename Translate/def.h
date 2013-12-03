@@ -20,6 +20,8 @@
 
 #define kSoundPath @"kSoundPath"
 
+#define kNotiNameBuyCoinOver @"kNotiNameBuyCoinOver"
+
 #define isPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
 #endif
