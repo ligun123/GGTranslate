@@ -14,7 +14,7 @@
 
 #define kCountActiveKey @"kCountActiveKey"
 
-#define kCountActiveAlertWouldShow 1
+#define kCountActiveAlertWouldShow 5
 
 @implementation AppDelegate (ReviewAlert)
 
@@ -33,7 +33,7 @@
     }
     count ++;
     [[NSUserDefaults standardUserDefaults] setInteger:count forKey:kCountActiveKey];
-    if ((count > 2 && (count % kCountActiveAlertWouldShow == 0)) || count == 3) {
+    if (count > 2 && (count % kCountActiveAlertWouldShow == 0)) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Would you buy the full version of this app? Your support is my biggest power!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Buy It", nil];
         [alert show];
         [alert release];
@@ -43,7 +43,7 @@
 - (void)scheduleAlertAlone
 {
     NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:kCountActiveKey];
-    if (count < 0) {
+    if (count < 6) {
         return;
     }
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Would you buy the full version of this app? Your support is my biggest power!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Buy It", nil];
