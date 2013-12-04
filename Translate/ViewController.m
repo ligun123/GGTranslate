@@ -21,7 +21,7 @@
 #import "HudController.h"
 #import "IOSHelper.h"
 
-#define MY_BANNER_UNIT_ID @"a1527af25b1d5a0"   
+#define MY_BANNER_UNIT_ID @"a1529f10250c167"   
 
 #define kMaxTextLength 100
 

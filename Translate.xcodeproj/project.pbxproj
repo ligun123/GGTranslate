@@ -59,8 +59,8 @@
 		B289978C1844496D004174B9 /* Icon-82.png in Resources */ = {isa = PBXBuildFile; fileRef = B289978B1844496D004174B9 /* Icon-82.png */; };
 		B289979218444BB5004174B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B289979418444BB5004174B9 /* Localizable.strings */; };
 		B295E4EE184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B295E4ED184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m */; };
-		B2BD2AEC184DC60400DB3186 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AE8184DC60400DB3186 /* Icon-76.png */; };
-		B2BD2AED184DC60400DB3186 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AE9184DC60400DB3186 /* Icon-76@2x.png */; };
+		B2BD2AEC184DC60400DB3186 /* Icon7-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AE8184DC60400DB3186 /* Icon7-76.png */; };
+		B2BD2AED184DC60400DB3186 /* Icon7-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AE9184DC60400DB3186 /* Icon7-76@2x.png */; };
 		B2BD2AEE184DC60400DB3186 /* Icon7.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AEA184DC60400DB3186 /* Icon7.png */; };
 		B2BD2AEF184DC60400DB3186 /* Icon7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AEB184DC60400DB3186 /* Icon7@2x.png */; };
 		B2BD2AF2184DC67700DB3186 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AF0184DC67700DB3186 /* Icon.png */; };
@@ -159,8 +159,8 @@
 		B289979618444BBB004174B9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B295E4EC184EF5DB00B8A508 /* AppDelegate+ReviewAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ReviewAlert.h"; sourceTree = "<group>"; };
 		B295E4ED184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ReviewAlert.m"; sourceTree = "<group>"; };
-		B2BD2AE8184DC60400DB3186 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
-		B2BD2AE9184DC60400DB3186 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		B2BD2AE8184DC60400DB3186 /* Icon7-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7-76.png"; sourceTree = "<group>"; };
+		B2BD2AE9184DC60400DB3186 /* Icon7-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7-76@2x.png"; sourceTree = "<group>"; };
 		B2BD2AEA184DC60400DB3186 /* Icon7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon7.png; sourceTree = "<group>"; };
 		B2BD2AEB184DC60400DB3186 /* Icon7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7@2x.png"; sourceTree = "<group>"; };
 		B2BD2AF0184DC67700DB3186 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 				B2BD2AF5184DC6DC00DB3186 /* Icon-72@2x.png */,
 				B2BD2AF0184DC67700DB3186 /* Icon.png */,
 				B2BD2AF1184DC67700DB3186 /* Icon@2x.png */,
-				B2BD2AE8184DC60400DB3186 /* Icon-76.png */,
-				B2BD2AE9184DC60400DB3186 /* Icon-76@2x.png */,
+				B2BD2AE8184DC60400DB3186 /* Icon7-76.png */,
+				B2BD2AE9184DC60400DB3186 /* Icon7-76@2x.png */,
 				B2BD2AEA184DC60400DB3186 /* Icon7.png */,
 				B2BD2AEB184DC60400DB3186 /* Icon7@2x.png */,
 				B289978B1844496D004174B9 /* Icon-82.png */,
@@ -468,8 +468,8 @@
 				B289978A18444250004174B9 /* buy.png in Resources */,
 				B289978C1844496D004174B9 /* Icon-82.png in Resources */,
 				B289979218444BB5004174B9 /* Localizable.strings in Resources */,
-				B2BD2AEC184DC60400DB3186 /* Icon-76.png in Resources */,
-				B2BD2AED184DC60400DB3186 /* Icon-76@2x.png in Resources */,
+				B2BD2AEC184DC60400DB3186 /* Icon7-76.png in Resources */,
+				B2BD2AED184DC60400DB3186 /* Icon7-76@2x.png in Resources */,
 				B2BD2AEE184DC60400DB3186 /* Icon7.png in Resources */,
 				B2BD2AEF184DC60400DB3186 /* Icon7@2x.png in Resources */,
 				B2BD2AF2184DC67700DB3186 /* Icon.png in Resources */,
@@ -618,6 +618,8 @@
 		B21E204D18433AA2007F2AEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Translate/Translate-Prefix.pch";
 				INFOPLIST_FILE = "Translate/Translate-Info.plist";
@@ -628,6 +630,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
