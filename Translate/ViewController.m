@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "AppDelegate.h"
+#import "AppDelegate+ReviewAlert.h"
 #import "ASIHTTPRequest.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIButton+Key.h"
@@ -21,6 +22,8 @@
 #import "IOSHelper.h"
 
 #define MY_BANNER_UNIT_ID @"a1527af25b1d5a0"   
+
+#define kMaxTextLength 100
 
 NSString *UUIDCreate()
 {
@@ -160,6 +163,7 @@ NSString *UUIDCreate()
 
 - (void)dealloc
 {
+    self.textNoteLabel = nil;
     self.btnBuy = nil;
     self.btnDes = nil;
     self.btnFav = nil;
@@ -203,14 +207,15 @@ NSString *UUIDCreate()
 }
 
 - (IBAction)btnPlaySoundTap:(id)sender {
-    if (soundData != nil) {
+    if (soundData != nil && [soundData length] != 0) {
         [[PlayerManager shareInterface] playSoundData:soundData];
         return;
     }
     //ht tp://translate.google.com/translate_tts?tl=en&q=text
     NSString *content = [[[[self.rawResultString objectFromJSONString] objectAtIndex:0] objectAtIndex:0] objectAtIndex:0];
+//    content = [content stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *key = [_btnDes tempKey];
-    NSString *str = [NSString stringWithFormat:@"http://translate.google.com/translate_tts?tl=%@&q=%@", key, [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSString *str = [NSString stringWithFormat:@"http://translate.google.com/translate_tts?ie=UTF-8&tl=%@&q=%@", key, [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURL *soundURL = [NSURL URLWithString:str];
     
     //    [[HudController shareHudController] showWithLabel:@"Loading..."];
@@ -249,17 +254,23 @@ NSString *UUIDCreate()
 }
 
 - (IBAction)btnFavTap:(id)sender {
-    if ([[_srcTextView text] length] == 0 || [[_resultTextView text] length] == 0 || soundData == nil) {
+    if ([[_srcTextView text] length] == 0 || [[_resultTextView text] length] == 0) {
         [BWStatusBarOverlay showSuccessWithMessage:NSLocalizedString(@"Content Error", nil) duration:2.0 animated:YES];
         return ;
     }
     
-    NSString *fPath = [self URLWithUUID];
-    if (![soundData writeToURL:[NSURL fileURLWithPath:fPath] atomically:YES]) {
-        NSLog(@"%s -> write error", __FUNCTION__);
+    if (soundData != nil && [soundData length] > 0) {
+        NSString *fPath = [self URLWithUUID];
+        if (![soundData writeToURL:[NSURL fileURLWithPath:fPath] atomically:YES]) {
+            NSLog(@"%s -> write error", __FUNCTION__);
+        }
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[_srcTextView text], kSrcText, [_resultTextView text], kDesText, [_btnSrc tempKey], kSrcKey, [_btnDes tempKey], kDesKey,fPath,kSoundPath,nil];
+        [favTextArray addObject:dic];
+    } else {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[_srcTextView text], kSrcText, [_resultTextView text], kDesText, [_btnSrc tempKey], kSrcKey, [_btnDes tempKey], kDesKey,nil];
+        [favTextArray addObject:dic];
     }
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[_srcTextView text], kSrcText, [_resultTextView text], kDesText, [_btnSrc tempKey], kSrcKey, [_btnDes tempKey], kDesKey,fPath,kSoundPath,nil];
-    [favTextArray addObject:dic];
+    
     [[NSUserDefaults standardUserDefaults] setObject:favTextArray forKey:kFavArray];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -294,6 +305,10 @@ NSString *UUIDCreate()
 
 - (void)translateSrcText
 {
+    if ([[_srcTextView text] length] > kMaxTextLength) {
+        [BWStatusBarOverlay showSuccessWithMessage:NSLocalizedString(@"Content Error", nil) duration:2.0 animated:YES];
+        return;
+    }
     [[HudController shareHudController] showWithLabel:@"Loading..."];
     //翻译文字是清空soundData
     [soundData release];
@@ -318,6 +333,7 @@ NSString *UUIDCreate()
         [self translateSrcText];
         return NO;
     }
+    self.textNoteLabel.text = [NSString stringWithFormat:@"%d/%d", textView.text.length, kMaxTextLength];
     return YES;
 }
 
@@ -356,17 +372,26 @@ NSString *UUIDCreate()
 - (void)ttsDidFinish:(ASIHTTPRequest *)request
 {
     [[HudController shareHudController] hudWasHidden];
-    [[PlayerManager shareInterface] playSoundData:soundData];
+    [[AppDelegate interface] scheduleAlertAlone];
+    if ([soundData length] == 0) {
+        //没有tts
+        self.btnSound.hidden = YES;
+    } else {
+        self.btnSound.hidden = NO;
+        [[PlayerManager shareInterface] playSoundData:soundData];
+    }
 }
 
 - (void)ttsDidFail:(ASIHTTPRequest *)request
 {
+    NSLog(@"%s -> %@", __FUNCTION__, [request error]);
     [[HudController shareHudController] hudWasHidden];
     [BWStatusBarOverlay showSuccessWithMessage:NSLocalizedString(@"Network Timeout", nil) duration:3.0 animated:YES];
 }
 
 - (void)ttsRequest:(ASIHTTPRequest *)request didReceiveData:(NSData *)data
 {
+    NSLog(@"%s -> ", __FUNCTION__);
     [soundData appendData:data];
 }
 

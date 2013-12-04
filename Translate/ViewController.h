@@ -40,5 +40,5 @@
 @property (nonatomic, retain) IBOutlet UIButton *btnSound;
 @property (nonatomic, retain) IBOutlet UIButton *btnFav;
 @property (nonatomic, retain) IBOutlet UIButton *btnFavList;
-
+@property (nonatomic, retain) IBOutlet UILabel *textNoteLabel;
 @end

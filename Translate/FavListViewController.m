@@ -95,8 +95,8 @@
         label2.font = [UIFont systemFontOfSize:13];
         [cell.contentView addSubview:label2];
         [label2 release];
-
         UIImageView *but = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"speak.png"]];
+        but.tag = 103;
         but.frame = CGRectMake(278, 50, 25, 25);
         [cell.contentView addSubview:[but autorelease]];
     }
@@ -111,6 +111,9 @@
     UILabel *labelDes = (UILabel *)[cell.contentView viewWithTag:102];
     labelDes.text = [dic objectForKey:kDesText];
     
+    if ([dic objectForKey:kSoundPath] == nil) {
+        [[cell.contentView viewWithTag:103] setHidden:YES];
+    }
     return cell;
 }
 

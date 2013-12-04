@@ -58,6 +58,7 @@
 		B289978A18444250004174B9 /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = B289978918444250004174B9 /* buy.png */; };
 		B289978C1844496D004174B9 /* Icon-82.png in Resources */ = {isa = PBXBuildFile; fileRef = B289978B1844496D004174B9 /* Icon-82.png */; };
 		B289979218444BB5004174B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B289979418444BB5004174B9 /* Localizable.strings */; };
+		B295E4EE184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B295E4ED184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m */; };
 		B2BD2AEC184DC60400DB3186 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AE8184DC60400DB3186 /* Icon-76.png */; };
 		B2BD2AED184DC60400DB3186 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AE9184DC60400DB3186 /* Icon-76@2x.png */; };
 		B2BD2AEE184DC60400DB3186 /* Icon7.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BD2AEA184DC60400DB3186 /* Icon7.png */; };
@@ -156,6 +157,8 @@
 		B289979318444BB5004174B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B289979518444BB9004174B9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B289979618444BBB004174B9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B295E4EC184EF5DB00B8A508 /* AppDelegate+ReviewAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ReviewAlert.h"; sourceTree = "<group>"; };
+		B295E4ED184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ReviewAlert.m"; sourceTree = "<group>"; };
 		B2BD2AE8184DC60400DB3186 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		B2BD2AE9184DC60400DB3186 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		B2BD2AEA184DC60400DB3186 /* Icon7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon7.png; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				B21E207318433B4A007F2AEF /* JSONKit */,
 				B21E203A18433AA2007F2AEF /* AppDelegate.h */,
 				B21E203B18433AA2007F2AEF /* AppDelegate.m */,
+				B295E4EC184EF5DB00B8A508 /* AppDelegate+ReviewAlert.h */,
+				B295E4ED184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m */,
 				B21E204318433AA2007F2AEF /* ViewController.h */,
 				B21E204418433AA2007F2AEF /* ViewController.m */,
 				B21E204618433AA2007F2AEF /* ViewController.xib */,
@@ -501,6 +506,7 @@
 				B21E20A718433FB3007F2AEF /* PlayerManager.m in Sources */,
 				B25B805E184345010033A35B /* FavListViewController.m in Sources */,
 				B2BD2B0E184DD96D00DB3186 /* IOSHelper.m in Sources */,
+				B295E4EE184EF5DC00B8A508 /* AppDelegate+ReviewAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
