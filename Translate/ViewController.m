@@ -139,7 +139,6 @@ NSString *UUIDCreate()
     bk.frame = self.view.bounds;
     [self.view insertSubview:[bk autorelease] atIndex:0];
     
-    return ;
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"noiad"]) {
         admobView = [[GADBannerView alloc]
                      initWithFrame:CGRectMake(0.0,
