@@ -116,10 +116,6 @@ NSString *UUIDCreate()
 
 - (void)noiadFinish:(NSNotification *)noti
 {
-    admobView.delegate = nil;
-    [admobView removeFromSuperview];
-    [admobView release];
-    admobView = nil;
     [_btnBuy removeFromSuperview];
     self.btnBuy = nil;
     self.btnSound.frame = CGRectOffset(self.btnSound.frame, -70, 0);
@@ -139,25 +135,6 @@ NSString *UUIDCreate()
     bk.frame = self.view.bounds;
     [self.view insertSubview:[bk autorelease] atIndex:0];
     
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"noiad"]) {
-        admobView = [[GADBannerView alloc]
-                     initWithFrame:CGRectMake(0.0,
-                                              self.view.frame.size.height -
-                                              GAD_SIZE_320x50.height,
-                                              GAD_SIZE_320x50.width,
-                                              GAD_SIZE_320x50.height)];
-        // 指定广告的“单元标识符”，也就是您的 AdMob 发布商 ID。
-        admobView.adUnitID = MY_BANNER_UNIT_ID;
-        
-        // 告知运行时文件，在将用户转至广告的展示位置之后恢复哪个 UIViewController
-        // 并将其添加至视图层级结构。
-        admobView.rootViewController = self;
-        [self.view addSubview:admobView];
-        
-        // 启动一般性请求并在其中加载广告。
-        [admobView loadRequest:[GADRequest request]];
-        admobView.delegate = self;
-    }
 }
 
 - (void)dealloc
@@ -170,8 +147,6 @@ NSString *UUIDCreate()
     self.btnSound = nil;
     self.btnSrc = nil;
     self.btnTranslate = nil;
-    admobView.delegate = nil;
-    [admobView release];
     [supportLanguage release];
     [mutiData release];
     [super dealloc];
@@ -322,6 +297,7 @@ NSString *UUIDCreate()
     [request setDidFinishSelector:@selector(requestDidFinish:)];
     [request setDidReceiveDataSelector:@selector(request:didReceiveData:)];
     [request setDidFailSelector:@selector(requestDidFail:)];
+    [request setTimeOutSeconds:20];
     [request startAsynchronous];
 }
 
@@ -371,7 +347,7 @@ NSString *UUIDCreate()
 - (void)ttsDidFinish:(ASIHTTPRequest *)request
 {
     [[HudController shareHudController] hudWasHidden];
-    [[AppDelegate interface] scheduleAlertAlone];
+//    [[AppDelegate interface] scheduleAlertAlone];
     if ([soundData length] == 0) {
         //没有tts
         self.btnSound.hidden = YES;
@@ -444,65 +420,6 @@ NSString *UUIDCreate()
 {
     NSArray *arr = [para componentsSeparatedByString:@"."];
     return [arr objectAtIndex:1];
-}
-
-#pragma mark Admob Request Lifecycle Notifications
-
-
-// Sent when an ad request loaded an ad.  This is a good opportunity to add this
-// view to the hierarchy if it has not yet been added.  If the ad was received
-// as a part of the server-side auto refreshing, you can examine the
-// hasAutoRefreshed property of the view.
-- (void)adViewDidReceiveAd:(GADBannerView *)view
-{
-    NSLog(@"%s -> ", __FUNCTION__);
-}
-
-// Sent when an ad request failed.  Normally this is because no network
-// connection was available or no ads were available (i.e. no fill).  If the
-// error was received as a part of the server-side auto refreshing, you can
-// examine the hasAutoRefreshed property of the view.
-- (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error
-{
-    NSLog(@"%s -> %@", __FUNCTION__, [error userInfo]);
-}
-
-
-// Sent just before presenting the user a full screen view, such as a browser,
-// in response to clicking on an ad.  Use this opportunity to stop animations,
-// time sensitive interactions, etc.
-//
-// Normally the user looks at the ad, dismisses it, and control returns to your
-// application by calling adViewDidDismissScreen:.  However if the user hits the
-// Home button or clicks on an App Store link your application will end.  On iOS
-// 4.0+ the next method called will be applicationWillResignActive: of your
-// UIViewController (UIApplicationWillResignActiveNotification).  Immediately
-// after that adViewWillLeaveApplication: is called.
-- (void)adViewWillPresentScreen:(GADBannerView *)adView
-{
-    NSLog(@"%s -> ", __FUNCTION__);
-}
-
-// Sent just before dismissing a full screen view.
-- (void)adViewWillDismissScreen:(GADBannerView *)adView
-{
-    NSLog(@"%s -> ", __FUNCTION__);
-}
-
-// Sent just after dismissing a full screen view.  Use this opportunity to
-// restart anything you may have stopped as part of adViewWillPresentScreen:.
-- (void)adViewDidDismissScreen:(GADBannerView *)adView
-{
-    NSLog(@"%s -> ", __FUNCTION__);
-}
-
-// Sent just before the application will background or terminate because the
-// user clicked on an ad that will launch another application (such as the App
-// Store).  The normal UIApplicationDelegate methods, like
-// applicationDidEnterBackground:, will be called immediately before this.
-- (void)adViewWillLeaveApplication:(GADBannerView *)adView
-{
-    NSLog(@"%s -> ", __FUNCTION__);
 }
 
 #pragma mark - NO IAD

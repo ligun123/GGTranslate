@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GADBannerView.h"
 
-@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate, GADBannerViewDelegate>
+@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate>
 {
     NSMutableData *soundData;
     NSMutableData *mutiData;
     NSArray *supportLanguage;
     NSMutableArray *favTextArray;
-    GADBannerView *admobView;
 }
 
 - (IBAction)btnTranslateTap:(id)sender;
